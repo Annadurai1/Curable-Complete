@@ -1,0 +1,328 @@
+{
+  "params": [
+    {
+      "values": [
+        "Yes",
+        "No",
+        "Not now"
+      ],
+      "testName": "Cervical Screening",
+      "condition": [
+        {
+          "enabledField": "Reason",
+          "triggerValue": "Not now"
+        },
+        {
+          "enabledField": "Symptoms",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Abnormal bleeding per vaginum",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Visual Inspection",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "HR-HPV DNA",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Cytology",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Visual Test",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Referral",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Pt. in periods",
+        "Not willing",
+        "Post Hysterectomy",
+        "Not Eligible",
+        "Others"
+      ],
+      "testName": "Reason",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "Reason"
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Symptoms",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "Symptoms",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "None",
+        "Post Menopausal bleeding",
+        "Post coital bleeding",
+        "Inter menstrual bleeding",
+        "DUB",
+        "Others"
+      ],
+      "testName": "Abnormal bleeding per vaginum",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No",
+        "Not now"
+      ],
+      "testName": "Visual Inspection",
+      "condition": [
+        {
+          "enabledField": "Findings on Visual Inspection",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": ""
+    },
+    {
+      "values": [
+        "Healthy cervix",
+        "Cervix polyp",
+        "Cervicitis",
+        "Nab.Follicles",
+        "Erosion",
+        "Leukoplakia",
+        "Condyloma",
+        "Growth / Invasive cancer",
+        "Others"
+      ],
+      "testName": "Findings on Visual Inspection",
+      "valueType": "Multi Select",
+      "isMandatory": true,
+      "subtestName": "",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No",
+        "Not now"
+      ],
+      "testName": "HR-HPV DNA",
+      "condition": [
+        {
+          "enabledField": "HR-HPV DNA Report Date",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "HR-HPV DNA Result",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "HR-HPV DNA Report",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "HR-HPV DNA",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "HR-HPV DNA Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "PS",
+        "SS",
+        "Others"
+      ],
+      "testName": "HR-HPV DNA Result",
+      "valueType": "Multi Select",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Positive",
+        "Negative",
+        "Invalid",
+        "Others"
+      ],
+      "testName": "HR-HPV DNA Report",
+      "condition": [
+        {
+          "enabledField": "Genotype",
+          "triggerValue": "Positive"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Group 1",
+        "Group 2",
+        "Group 3",
+        "Group 4",
+        "Group 5",
+        "Group 6",
+        "Group 7",
+        "Group 8",
+        "Group 9"
+      ],
+      "testName": "Genotype",
+      "valueType": "SingleSelect",
+      "isMandatory": false,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No",
+        "Not now"
+      ],
+      "testName": "Cytology",
+      "condition": [
+        {
+          "enabledField": "Cytology Report Date",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Cytology Report",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "Cytology",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Cytology Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Normal/Inflammatory",
+        "Not Satisfactory",
+        "LSIL",
+        "ASC US",
+        "ASC (H)",
+        "HSIL",
+        "Atypical glandular cell specified/unspecified",
+        "Invasive"
+      ],
+      "testName": "Cytology Report",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No",
+        "Not now"
+      ],
+      "testName": "Visual Test",
+      "condition": [
+        {
+          "enabledField": "Visual Test Report",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Visual Test Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Positive",
+        "Negative",
+        "Inconclusive"
+      ],
+      "testName": "Visual Test Report",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Visual Test Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Referral",
+      "condition": [
+        {
+          "enabledField": "Referred for",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "VIA positive",
+        "Major erosion",
+        "Polyps",
+        "Bleeding on touch",
+        "Post Menopausal bleeding",
+        "Suspicious vaginal/vault lesion",
+        "Others"
+      ],
+      "testName": "Referred for",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "Referred for",
+      "selectedValues": []
+    }
+  ]
+}

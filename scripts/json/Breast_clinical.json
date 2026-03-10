@@ -1,0 +1,298 @@
+{
+  "params": [
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Breast Clinical Examination",
+      "condition": [
+        {
+          "enabledField": "UHID",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "SCR OPD Number",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Mammogram",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Ultrasound Breast",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Cytology",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Biopsy",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Additional Comments",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Final diagnosis",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Treatment",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Followup Advice",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "UHID",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "none",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "SCR OPD Number",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "none",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Mammogram",
+      "condition": [
+        {
+          "enabledField": "Mammogram – Right Breasts",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Mammogram – Left Breasts",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Mammogram Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Mammogram – Right Breasts",
+      "valueType": "Input",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Mammogram – Left Breasts",
+      "valueType": "Input",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Mammogram Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Ultrasound Breast",
+      "condition": [
+        {
+          "enabledField": "Ultrasound – Right Breasts",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Ultrasound – Left Breasts",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Ultrasound Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Ultrasound – Right Breasts",
+      "valueType": "Input",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Ultrasound – Left Breasts",
+      "valueType": "Input",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Ultrasound Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Cytology",
+      "condition": [
+        {
+          "enabledField": "Cytology Image",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Cytology Report Date",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Other findings",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Cytology Report Date",
+      "valueType": "Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Positive for Atypical cells",
+        "Negative for Atypical cells",
+        "Others"
+      ],
+      "testName": "Cytology Image",
+      "valueType": "SingleSelect",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Other findings",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "none",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Biopsy",
+      "condition": [
+        {
+          "enabledField": "Biopsy Report Date",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Biopsy Report",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Biopsy Report Date",
+      "valueType": "Date",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Biopsy Report",
+      "valueType": "Input",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Additional Comments",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "Additional Comments",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Benign",
+        "Malignant",
+        "Others"
+      ],
+      "testName": "Final diagnosis",
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Completed",
+        "Partially done",
+        "Preferred other center"
+      ],
+      "testName": "Treatment",
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Nill",
+        "3 months",
+        "6 months",
+        "12 months"
+      ],
+      "testName": "Followup Advice",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    }
+  ],
+  "repeat": null,
+  "repeatlabel": null
+}

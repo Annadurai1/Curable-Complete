@@ -1,0 +1,19 @@
+package com.curable.exception;
+
+import org.springframework.security.core.AuthenticationException;
+
+/**
+ * 
+ * @author Annadurai S
+ *
+ */
+public class InvalidJwtAuthenticationException extends AuthenticationException {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public InvalidJwtAuthenticationException(String e) {
+		super(e);
+	}
+}

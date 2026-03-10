@@ -1,0 +1,19 @@
+{
+  "params": [
+    {
+      "values": [
+        "Married",
+        "Divorced",
+        "Never Married",
+        "Widowed", 
+        "Separated", 
+        "Living Together"
+      ],
+      "testName": "Marital Status",
+      "condition": null,
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    }
+  ]
+}

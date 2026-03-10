@@ -1,0 +1,267 @@
+{
+  "params": [
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Oral Clinical Evaluation",
+      "condition": [
+        {
+          "enabledField": "UHID",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "SCR OPD Number",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Tobacco Counselling",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Head & Neck OPD",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Oral Cytology",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Biopsy",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Additional Comments",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Final diagnosis",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Treatment",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Followup Advice",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "UHID",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "none",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "SCR OPD Number",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "none",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Tobacco Counselling",
+      "condition": [
+        {
+          "enabledField": "Tobacco Outcome of Visit",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Tobacco Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Tobacco Outcome of Visit",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Tobacco Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Head & Neck OPD",
+      "condition": [
+        {
+          "enabledField": "Outcome of Visit: Head & Neck OPD",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Outcome of Visit: Head & Neck OPD",
+      "valueType": "Input",
+      "isMandatory": true,
+      "subtestName": "Outcome of Visit: Head & Neck OPD",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Oral Cytology",
+      "condition": [
+        {
+          "enabledField": "Oral Cytology Report",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Oral Cytology Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "Oral Cytology",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Oral Cytology Report",
+      "valueType": "Input",
+      "subtestName": "Oral Cytology Report",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Oral Cytology Report Date",
+      "valueType": "Date",
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Biopsy",
+      "condition": [
+        {
+          "enabledField": "Biopsy Report",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Biopsy Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "Biopsy",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Biopsy Report",
+      "valueType": "Input",
+      "isMandatory": true,
+      "subtestName": "Biopsy Report",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Biopsy Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Additional Comments",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "Additional Comments",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Benign",
+        "Malignant",
+        "Others"
+      ],
+      "testName": "Final diagnosis",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Completed",
+        "Partially done",
+        "Preferred other center"
+      ],
+      "testName": "Treatment",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Nill",
+        "3 months",
+        "6 months",
+        "12 months"
+      ],
+      "testName": "Followup Advice",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    }
+  ]
+}

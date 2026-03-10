@@ -1,0 +1,143 @@
+HospitalGroup
+  id bigint key
+  groupName varchar
+  description varchar
+  licenseNo varchar
+
+Hospital
+  id bigint key
+  hospitalGroupId bigint references HospitalGroup.Id
+  name varchar
+  description varchar
+  address varchar
+  licenseNo varchar
+
+EmployeeRoleMaster
+  id bigint key
+  name varchar
+  description varchar
+
+HospitalEmployee
+  id bigint key
+  employeeRoleMasterId bigint references EmployeeRoleMaster.Id
+  name varchar
+  yearsExp decimal
+  phoneNo varchar
+  gender varchar
+  email varchar
+
+HospitalEmployeeMap
+  id bigint key
+  hospitalEmployeeId bigint references HospitalEmployee.Id
+  hospitalId bigint references Hospital.Id
+
+DiseaseMaster
+  id bigint key
+  name varchar
+  description varchar
+
+SubDiseaseMaster
+  id bigint key
+  name varchar
+  description varchar
+  diseaseMasterId bigint references DiseaseMaster.Id
+
+StateMaster
+  id bigint key
+  code varchar
+  name varchar
+
+DistrictMaster
+  id bigint key
+  code varchar
+  name varchar
+  stateMasterId bigint references StateMaster.Id
+
+TaluqMaster
+  id bigint key
+  code varchar
+  name varchar
+  districtMasterId bigint references DistrictMaster.Id
+
+PanchayatMaster
+  id bigint key
+  code varchar
+  name varchar
+  taluqMasterId bigint references TaluqMaster.Id
+
+Camp
+  id bigint key
+  name varchar
+  hospitalId bigint references Hospital.Id
+  panchayatMasterId bigint references PanchayatMaster.Id
+  address varchar
+  pincode varchar
+  startDate datetime
+  endDate datetime
+  campIdPrefix varchar
+
+CampDiseases
+  id bigint key
+  campId bigint references Camp.Id
+  subDiseaseMasterId bigint references SubDiseaseMaster.Id
+
+CampStaff
+  id bigint key
+  campId bigint references Camp.Id
+  hospitalEmployeeId bigint references HospitalEmployee.Id
+
+Candidate
+  id bigint key
+  registraionId varchar
+  campId bigint references Camp.Id
+  optionalId bigint 
+  name varchar
+  gender varchar
+  age number
+  maritalStatus varchar
+  spouseName varchar
+  phone varchar
+  aadhar varchar
+  address varchar
+  email varchar
+  tobaccoUser boolean
+  parentCandidateId bigInt
+  surveyStatus varchar
+  consentDate datetime
+  consentSign varchar
+
+DiseaseTestMaster
+  id bigint key
+  name varchar
+  description varchar
+  diseaseTestId bigint
+  genderValid boolean
+  testMetrics varchar
+  stage number
+
+TreatmentLookup
+  id bigint key
+  name varchar
+
+DiagnosisLookup
+  id bigint key
+  name varchar
+
+CandidateTest
+  id bigint key
+  candidateId bigint references Candidate.Id
+  diseaseTestMasterId bigint references DiseaseTestMaster.Id
+  testDate datetime
+  resultDate datetime
+  result varchar
+  referral varchar
+  testResult varchar
+  diagnosisLookupId bigint references DiagnosisLookup.Id
+  treatmentLookupId bigint references TreatmentLookup.Id
+
+CandidateHistory
+  id bigint key
+  historyDate datetime
+  candidateId bigint references Candidate.Id
+  historyData varchar
+

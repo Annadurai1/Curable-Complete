@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+	<include
+		resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<property name="log.folder"
+		value="/home/ubuntu/apps/deploy/logs" />
+
+
+	<property name="log.history" value="10" />
+	<property name="log.pattern"
+		value="%d %-5level | [%thread] %logger{0}: %msg%n" />
+
+	<appender name="CONSOLE"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS,IST}
+				%level|[%thread]%logger{10}[%file:%line]
+				%msg%n	</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE-LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.folder}/curable-service.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${log.folder}/curable-service.%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>${log.history}</maxHistory>
+			<totalSizeCap>5GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS,IST}
+				%level|[%thread]%logger{10}[%file:%line]
+				%msg%n	</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="SQL-LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.folder}/curable-sql.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${log.folder}/curable-sql.%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>${log.history}</maxHistory>
+			<totalSizeCap>5GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS,IST}
+				%level|[%thread]%logger{10}[%file:%line]
+				%msg%n	</pattern>
+		</encoder>
+	</appender>
+
+	
+
+	<appender name="ERROR-LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.folder}/curable-error.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${log.folder}/curable-error.%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>100MB</maxFileSize>
+			<maxHistory>${log.history}</maxHistory>
+			<totalSizeCap>5GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS,IST}
+				%level|[%thread]%logger{10}[%file:%line]
+				%msg%n	</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+	</appender>
+
+	
+	<logger name="io.github.jhipster" level="DEBUG" />
+	<logger name="javax.activation" level="WARN" />
+	<logger name="javax.mail" level="WARN" />
+	<logger name="javax.xml.bind" level="WARN" />
+	<logger name="ch.qos.logback" level="WARN" />
+	<logger name="com.codahale.metrics" level="WARN" />
+	<logger name="com.netflix" level="WARN" />
+	<logger name="com.netflix.discovery" level="INFO" />
+	<logger name="com.ryantenney" level="WARN" />
+	<logger name="com.sun" level="WARN" />
+	<logger name="com.zaxxer" level="WARN" />
+	<logger name="io.undertow" level="WARN" />
+	<logger name="io.undertow.websockets.jsr" level="ERROR" />
+	<logger name="org.ehcache" level="WARN" />
+	<logger name="org.apache" level="WARN" />
+	<logger name="org.apache.catalina.startup.DigesterFactory"
+		level="OFF" />
+	<logger name="org.bson" level="WARN" />
+	<logger name="org.elasticsearch" level="WARN" />
+	<logger name="org.hibernate" level="WARN" />
+	<logger name="org.hibernate.validator" level="WARN" />
+	<logger name="org.hibernate.ejb.HibernatePersistence"
+		level="OFF" />
+	<logger name="org.springframework" level="WARN" />
+	<logger name="org.springframework.web" level="WARN" />
+	<logger name="org.springframework.security" level="WARN" />
+	<logger name="org.springframework.cache" level="WARN" />
+	<logger name="org.thymeleaf" level="WARN" />
+	<logger name="org.xnio" level="WARN" />
+	<logger name="springfox" level="WARN" />
+	<logger name="sun.rmi" level="WARN" />
+	<logger name="sun.net.www" level="INFO" />
+	<logger name="sun.rmi.transport" level="WARN" />
+	<logger name="com.curable" level="#logback.loglevel#" />
+
+	<contextListener
+		class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+	
+
+	<root level="#logback.loglevel#">
+		<appender-ref ref="FILE-LOG" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+	<root level="ERROR">
+		<appender-ref ref="ERROR-LOG" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+	<logger name="org.hibernate.SQL" level="DEBUG">
+		<appender-ref ref="SQL-LOG" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+</configuration>

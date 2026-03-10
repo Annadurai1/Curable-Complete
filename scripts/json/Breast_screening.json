@@ -1,0 +1,123 @@
+{
+  "params": [
+    {
+      "values": [
+        "Yes",
+        "No",
+        "Not now"
+      ],
+      "testName": "Breast Examination",
+      "condition": [
+        {
+          "enabledField": "Symptoms",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Right Breast on palpation",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Left Breast on palpation",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Nipple Discharge",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Referral",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Symptoms",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Normal/Fibro glandular",
+        "Nodularity",
+        "FCC changes",
+        "Thickening",
+        "Freely mobile lump",
+        "Suspicious lumps",
+        "Others"
+      ],
+      "testName": "Right Breast on palpation",
+      "valueType": "Multi Select",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Normal/Fibro glandular",
+        "Nodularity",
+        "FCC changes",
+        "Thickening",
+        "Freely mobile lump",
+        "Suspicious lumps",
+        "Others"
+      ],
+      "testName": "Left Breast on palpation",
+      "valueType": "Multi Select",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes for right breast",
+        "Yes for left breast",
+        "Yes for both breasts",
+        "No for both breasts"
+      ],
+      "testName": "Nipple Discharge",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Referral",
+      "condition": [
+        {
+          "enabledField": "Referred for",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Breast/Pathology axillary",
+        "Baseline mammogram",
+        "USG breast"
+      ],
+      "testName": "Referred for",
+      "valueType": "Multi Select",
+      "isMandatory": true,
+      "subtestName": "Referred for",
+      "selectedValues": []
+    }
+  ]
+}

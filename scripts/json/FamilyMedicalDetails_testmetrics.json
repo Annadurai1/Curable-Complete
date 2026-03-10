@@ -1,0 +1,63 @@
+{
+  "params": [
+    {
+      "values": [
+        "Aunt",
+        "Brother",
+        "Cousin",
+        "Daughter",
+        "Father",
+        "Grand Father",
+        "Grand Mother",
+        "Mother",
+        "Nephew",
+        "Niece",
+        "Sister",
+        "Son",
+        "Spouse",
+        "Uncle"
+      ],
+      "testName": "Relation ",
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Breast",
+        "Colon",
+        "Head and Neck",
+        "Not Applicable",
+        "Not Known",
+        "Oral",
+        "Others",
+        "Ovaries",
+        "Pancreas",
+        "Uterine"
+      ],
+      "testName": "Cancer Site",
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Age At Diagnosis",
+      "valueType": "Input",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Alive/Treatment ",
+        "Dead"
+      ],
+      "testName": "Outcome",
+      "valueType": "Button",
+      "subtestName": "NONE",
+      "selectedValues": []
+    }
+  ],
+  "repeat": true,
+  "repeatlabel": "Add Member History"
+}

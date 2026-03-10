@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="content-type" content="text/html" charset="utf-8">
+<title>Mail</title>
+<style type="text/css">
+table {
+	/* border: 1px solid black !important; */
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	table-layout: auto;
+}
+
+table, th, td {
+	/* padding: 0.35em; */
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+tr {
+	background-color: white;
+	padding: 0.45em;
+}
+
+table td {
+	background-color: white;
+	color: #190F4C;;
+	font-size: 12px;
+	padding: 0.95em;
+	text-align: center;
+	font-family: Verdana, Geneva, sans-serif;
+	text-transform: uppercase;
+}
+
+table th {
+	text-align: center;
+	font-family: Verdana, Geneva, sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	padding: 0.95em;
+	color: white;
+	background-color: #190F4C;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.errormsg {
+	min-width: 370px;
+}
+
+.success {
+	color: red;
+}
+
+.failure {
+	color: red;
+}
+
+.label {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+.disclaimer {
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	padding: 12px;
+}
+
+div.a {
+	line-height: 28px;
+}
+
+div.b {
+	line-height: 25px;
+}
+
+div.c {
+	line-height: 45px;
+}
+
+div.d {
+	line-height: 5px;
+}
+</style>
+</head>
+<body>
+  <div>
+    Hi,
+     <br></br><strong> <span th:text="${listuser.userName}"></span></strong>
+     <div class = "a">Welcome to Curable Screening App! We’re excited to have you on board as we work together to enhance Cancer Screening processes.</div>
+	 <div class = "a">With Curable, you’ll have access to tools that are designed to make your workflow smoother and more efficient.</div>
+     <span class = "b">  To begin, log in using your credentials.  </span> <br> <br>
+       <strong class="d">Live URL </strong>- <span th:text="${listuser.url}"> </span> <br>
+    <strong> Login ID - </strong>
+    <span th:text="${listuser.userName}"> </span> <br>
+    <strong> Password - </strong>
+    <span th:text="${listuser.password}"></span> <br> <br>
+	<div class = "a">If you need any help, feel free to reach out to us.</div>
+	<div class = "a">Let’s make a difference together!</div> <br>
+    Thanks, <br> Team Curable </br>
+  </div>
+</body>
+</html>

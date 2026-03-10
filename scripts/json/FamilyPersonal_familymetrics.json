@@ -1,0 +1,77 @@
+{
+  "params": [
+    {
+      "values": [],
+      "testName": "Name",
+      "valueType": "Input",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Aunt",
+        "Brother",
+        "Cousin",
+        "Daughter",
+        "Father",
+        "Grand Father",
+        "Grand Mother",
+        "Mother",
+        "Nephew",
+        "Niece",
+        "Sister",
+        "Son",
+        "Spouse",
+        "Uncle"
+      ],
+      "testName": "Relation ",
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Male",
+        "Female",
+        "Other"
+      ],
+      "testName": "Gender",
+      "valueType": "Button",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Age",
+      "valueType": "Input",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes ",
+        "No"
+      ],
+      "testName": "Tobacco/Alcohol Habits",
+      "valueType": "Button",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Married",
+        "Divorced",
+        "Never Married",
+        "Widowed",
+        "Separated",
+        "Living Together"
+      ],
+      "testName": "Marital Status",
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    }
+  ],
+  "repeat": true,
+  "repeatlabel": "Add Member"
+}

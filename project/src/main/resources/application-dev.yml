@@ -1,0 +1,106 @@
+
+
+keycloak-admin:
+  clientId: admin-cli
+  realm: master
+  serverUrl: http://13.234.4.214:8022
+  username: admin
+  userrealm: curable
+  password: cureall2024!$
+security:
+    jwt:
+        token:
+            expire-length: 25200
+            secret-key: curable-secret-key
+keycloak:
+  userCreationUrl: http://13.234.4.214:8022/admin/realms/curable/users            
+            
+logging:
+  level:
+    com:
+      curable:
+          aop:
+            logging: DEBUG
+          repository: DEBUG
+          rest: DEBUG
+          service: DEBUG
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql:
+              BasicBinder: DEBUG 
+      springframework: 
+        mail: DEBUG                 
+server:
+    port: 8020
+    
+   
+spring:
+    jackson:
+      serialization:
+        fail-on-empty-beans: false
+    main:
+        banner-mode: 'off'
+        allow-bean-definition-overriding: true
+        jackson:
+            serialization.write_dates_as_timestamps: false
+    
+    application:
+        name: curable-disease-service
+    mail:
+        host: email-smtp.ap-south-1.amazonaws.com
+        port: 587
+        from: support@curable.care
+        username: AKIAXWMA6HM6GIJCTFOM
+        password: BIn+9Y36tmXWjubjFJBWW/kKD1M/TEGFz5uQX8VF7Rnm
+        properties:
+           mail:
+             transport:
+               protocol: smtp  
+             smtp:
+               auth: true
+               starttls:
+                 enable: true
+                 required: true
+               ssl:
+                 trust: email-smtp.ap-south-1.amazonaws.com
+    datasource:
+        driver: com.mysql.cj.jdbc.Driver
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        hikari:
+            auto-commit: true
+            connection-timeout: 20000
+            idle-timeout: 300000
+            max-lifetime: 1200000
+            maximum-pool-size: 500
+            minimum-idle: 50
+            leakDetectionThreshold: 300000
+        username: annadurai
+        password: Anna@123
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://13.234.4.214:3306/curabled?useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&useSSL=false&autoReconnect=true&jdbcCompliantTruncation=false&sessionVariables=sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO'
+    jpa:
+        open-in-view: false
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+            naming: {physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl}
+            use-new-id-generator-mappings: true
+        properties:
+            hibernate: {
+            dialect: org.hibernate.dialect.MySQL5InnoDBDialect, 
+            format_sql: false, 
+            show_sql: false, 
+            type: info, 
+            metadata_builder_contributor: com.curable.config.SqlFunctions,
+            use_sql_comments: false, 
+            batch: {size: 20}, 
+            cache: {use_query_cache: false, use_second_level_cache: false}, 
+            enable_lazy_load_no_trans: true, 
+            event: {merge: {entity_copy_observer: allow}}, generate_statistics: true, hbm2ddl: {auto: update}, id: {new_generator_mappings: false}}
+            org: {hibernate: {envers: {audit_table_suffix: _aud, default_catalog: ca_audit, revision_field_name: revision_id, revision_type_field_name: revision_type}}}
+
+
+
+

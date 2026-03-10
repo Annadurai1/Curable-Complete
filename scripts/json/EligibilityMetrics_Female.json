@@ -1,0 +1,30 @@
+{
+  "params": [
+    {
+      "values": [
+        "Married",
+        "Divorced",
+        "Never Married",
+        "Widowed", 
+        "Separated", 
+        "Living Together"
+      ],
+      "testName": "Marital Status",
+      "condition": null,
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Hysterectomy Done",
+      "condition": null,
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    }
+  ]
+}

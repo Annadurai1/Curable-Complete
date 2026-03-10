@@ -1,0 +1,88 @@
+{
+  "params": [
+    {
+      "values": [
+        "Yes",
+        "No",
+        "Not now"
+      ],
+      "testName": "Oral Examination",
+      "condition": [
+        {
+          "enabledField": "Symptoms",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Findings on oral examination",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Referral",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Symptoms",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Normal ",
+        "Melanoplakia",
+        "Leukoplakia",
+        "Erythoplakia",
+        "Submucous fibrosis",
+        "Nodules",
+        "Ulcers",
+        "Invasive Growth",
+        "Others"
+      ],
+      "testName": "Findings on oral examination",
+      "valueType": "Multi Select",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Referral",
+      "condition": [
+        {
+          "enabledField": "Referred for",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Tobacco Counseling",
+        "Head & Neck at OPD at CI",
+        "Both"
+      ],
+      "testName": "Referred for",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "Referred for",
+      "selectedValues": []
+    }
+  ]
+}

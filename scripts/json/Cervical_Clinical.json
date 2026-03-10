@@ -1,0 +1,218 @@
+{
+  "params": [
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Cervical Clinical Examination",
+      "condition": [
+        {
+          "enabledField": "UHID",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "SCR OPD Number",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Colposcopy",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Colpo Guided Biopsy",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Additional Comments",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Treatment Plan",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Treatment",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Followup Advice",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "UHID",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "none",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "SCR OPD Number",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "none",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Colposcopy",
+      "condition": [
+        {
+          "enabledField": "Image",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Colposcopy Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Satisfactory",
+        "Unsatisfactory"
+      ],
+      "testName": "Image",
+      "condition": [
+        {
+          "enabledField": "Colposcopy Report",
+          "triggerValue": "Satisfactory"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Normal/Squamous metaplasia/Inflammatory",
+        "CIN I",
+        "CIN II",
+        "CIN III/Ca in situ",
+        "Invasive cancer",
+        "Others"
+      ],
+      "testName": "Colposcopy Report",
+      "valueType": "Multi Select",
+      "subtestName": "Image",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Colposcopy Report Date",
+      "valueType": "Date",
+      "isMandatory": true,
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Yes",
+        "No"
+      ],
+      "testName": "Colpo Guided Biopsy",
+      "condition": [
+        {
+          "enabledField": "Colpo Guided Biopsy Image",
+          "triggerValue": "Yes"
+        },
+        {
+          "enabledField": "Colpo Guided Biopsy Report Date",
+          "triggerValue": "Yes"
+        }
+      ],
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Colpo Guided Biopsy Report Date",
+      "valueType": "Date",
+      "subtestName": "Report Date",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Normal/Squamous metaplasia/Inflammatory",
+        "CIN I",
+        "CIN II",
+        "CIN III/Ca in situ",
+        "Glandular dysplasia",
+        "Squamous cell carcinoma",
+        "Adenocarcinoma ",
+        "Inconclusive"
+      ],
+      "testName": "Colpo Guided Biopsy Image",
+      "condition": null,
+      "valueType": "Multi Select",
+      "subtestName": "Image",
+      "selectedValues": []
+    },
+    {
+      "values": [],
+      "testName": "Additional Comments",
+      "valueType": "Input",
+      "isMandatory": false,
+      "subtestName": "Additional Comments",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Observation & Follow up",
+        "Cone Biopsy",
+        "Hysterectomy",
+        "Cryotherapy",
+        "Leep",
+        "Cancer management",
+        "Thermocoagulation",
+        "Others"
+      ],
+      "testName": "Treatment Plan",
+      "valueType": "Multi Select",
+      "subtestName": "Colpo Guided Biopsy",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "Completed",
+        "Partially done",
+        "Preferred other center"
+      ],
+      "testName": "Treatment",
+      "valueType": "SingleSelect",
+      "subtestName": "NONE",
+      "selectedValues": []
+    },
+    {
+      "values": [
+        "4 weeks",
+        "6 weeks",
+        "12 weeks",
+        "6 months",
+        "12 months",
+        "Once in 3 years",
+        "Others"
+      ],
+      "testName": "Followup Advice",
+      "valueType": "SingleSelect",
+      "isMandatory": true,
+      "subtestName": "NONE",
+      "selectedValues": []
+    }
+  ]
+}
