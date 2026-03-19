@@ -94,7 +94,7 @@ public class CandidateHistoryService {
 		candidateHistoryDTO.setId(null);
 		if (candidateHistoryDTO.getType() == 1 && candidateHistoryDTO.getTestMetrics() != null) {
 			long match = candidateHistoryDTO.getTestMetrics().params.stream().filter(
-					a -> (a.getTestName().equalsIgnoreCase("Referral") && a.getSelectedValues().contains("Yes")))
+							a -> (a.getTestName().equalsIgnoreCase("Referral") && a.getSelectedValues().contains("Yes")))
 					.count();
 			List<String> targetTests = Arrays.asList("Oral Examination", "Cervical Screening", "Breast Examination",
 					"Symptoms Based Referral", "Is patient willing for Breast  Screening",
@@ -147,18 +147,19 @@ public class CandidateHistoryService {
 				testRepository.deleteByCandidateIdAndDiseaseTestMaster_Id(candidateHistoryDTO.getCandidateId(),
 						Constant.CERVICAL_SCREENING_TEST_ID);
 			} /*
-				 * else if (match == 0) { long alreadyHave = testRepository.
-				 * countByCandidateIdAndDiseaseTestMaster_IdAndIsRecordDeletedFalse(
-				 * candidateHistoryDTO.getCandidateId(), Constant.CERVICAL_SCREENING_TEST_ID);
-				 * if (alreadyHave == 0) { testRepository .save(new CandidateTest(null,
-				 * candidateMapper.fromId(candidateHistoryDTO.getCandidateId()),
-				 * diseaseTestMasterMapper.fromId(Constant.CERVICAL_SCREENING_TEST_ID))); } }
-				 */
+			 * else if (match == 0) { long alreadyHave = testRepository.
+			 * countByCandidateIdAndDiseaseTestMaster_IdAndIsRecordDeletedFalse(
+			 * candidateHistoryDTO.getCandidateId(), Constant.CERVICAL_SCREENING_TEST_ID);
+			 * if (alreadyHave == 0) { testRepository .save(new CandidateTest(null,
+			 * candidateMapper.fromId(candidateHistoryDTO.getCandidateId()),
+			 * diseaseTestMasterMapper.fromId(Constant.CERVICAL_SCREENING_TEST_ID))); } }
+			 */
 		} else if (candidateHistoryDTO.getType() == 1 && candidateHistoryDTO.getFamilyMetrics() != null
 				&& !candidateHistoryDTO.getFamilyMetrics().isEmpty()) {
 			List<Candidate> toBeSave = new ArrayList<Candidate>();
 			Candidate parentCandidateDetails = candidateRepository.findById(candidateHistoryDTO.getCandidateId())
 					.orElse(null);
+			candidateRepository.deleteByParentCandidateId(candidateHistoryDTO.getCandidateId());
 			for (int i = 0; i < candidateHistoryDTO.getFamilyMetrics().size(); i++) {
 				char suffix = (char) ('A' + i);
 				CommonTestParamsDTO mem = candidateHistoryDTO.getFamilyMetrics().get(i);

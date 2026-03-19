@@ -43,20 +43,20 @@ public class ReportService {
 
 	public byte[] generateReport(DownloadRequestDTO downloadRequestDTO) throws Exception {
 		switch (downloadRequestDTO.getReportType()) {
-		case Outreachclinic:
-			return generateCampsReportCsv(downloadRequestDTO);
-		case Patientregistration:
-			return generatePatientRegReportCsv(downloadRequestDTO);
-		case Screening:
-			return generateScreeningReportCsv(downloadRequestDTO);
-		case SavedPatient:
-			return generateSavedPatientCsv(downloadRequestDTO);
-		case Clinical_Evaluation:
-			return generateClinicalReportCsv(downloadRequestDTO);
-		case UniquePatientReport:
-			return uniquePatientReport(downloadRequestDTO);
-		default:
-			break;
+			case Outreachclinic:
+				return generateCampsReportCsv(downloadRequestDTO);
+			case Patientregistration:
+				return generatePatientRegReportCsv(downloadRequestDTO);
+			case Screening:
+				return generateScreeningReportCsv(downloadRequestDTO);
+			case SavedPatient:
+				return generateSavedPatientCsv(downloadRequestDTO);
+			case Clinical_Evaluation:
+				return generateClinicalReportCsv(downloadRequestDTO);
+			case UniquePatientReport:
+				return uniquePatientReport(downloadRequestDTO);
+			default:
+				break;
 		}
 		return null;
 	}
@@ -71,8 +71,15 @@ public class ReportService {
 		}
 		try (StringWriter sw = new StringWriter(); CSVWriter csvWriter = new CSVWriter(sw)) {
 			// CSV Header
-			String[] header = { "REGISTRATIONID", "NAME", "MOBILE NO", "GENDER", "AGE", "ADDRESS", "STREETID",
-					"ELIGIBILITY MARITAL STATUS", "CREATED DATE", "CREATED BY" };
+			String[] header = { "OUTREACH CLINIC ID", "OUTREACH CLINIC NAME", "CREATED DATE", "CREATED BY",
+					"REGISTRATIONID", "NAME", "MOBILE NO", "GENDER", "AGE", "ADDRESS", "STREETID", "FATHER NAME",
+					"SPOUSE NAME", "ALTERNATE MOBILE NO", "MONTHLY INCOME", "HOUSE TYPE", "EDUCATION", "OCCUPATION",
+					"AADHAR", "VOTER ID", "RATION CARD", "MEDICAL HISTORY", "BLOOD PRESSURE", "PULSE RATE", "WEIGHT",
+					"HISTORY OF SURGERY", "HEIGHT", "SPO2", "ALLERGY", "OTHER COMPLAINTS", "AGE AT MENARCHE",
+					"AGE AT FIRST CHILD", "AGE AT LAST CHILD", "AGE AT MARRIAGE", "LAST MENSTRUATION",
+					"ABNORMAL BLEEDING VAGINUM", "TOTAL PREGNANCIES", "CURRENTLY PREGNANT",
+					"METHOD OF CONTRACEPTION USED", "UNDERGONE CERVICAL BREAST SCREENING", "BREAST FED",
+					"SOCIAL HABITS", "ELIGIBILITY METRICS" };
 			csvWriter.writeNext(header);
 			ObjectMapper objectMapper = new ObjectMapper();
 			// CSV Rows
@@ -83,20 +90,57 @@ public class ReportService {
 				}
 
 				System.out.println(dto.getEligibilityMetrics());
-				String[] row = { convertUpperCaseWithForceText(dto.getRegistraionId()), convertUpperCase(dto.getName()),
-						convertUpperCase(dto.getMobileNo()), convertUpperCase(dto.getGender()),
+				String[] row = { convertUpperCaseWithForceText(dto.getOutreachClinicID()),
+						convertUpperCase(dto.getOutreachClinicName()),
+
+						convertUpperCaseWithForceText(dto.getCreatedDate()), convertUpperCaseWithForceText(dto.getCreatedBy()),
+
+						convertUpperCaseWithForceText(dto.getRegistraionId()), convertUpperCase(dto.getName()),
+						convertUpperCaseWithForceText(dto.getMobileNo()), convertUpperCase(dto.getGender()),
+
 						convertUpperCase(dto.getAge() != null ? dto.getAge().toString() : ""),
 						convertUpperCase(dto.getAddress()),
+
 						convertUpperCaseWithForceText(
 								dto.getStreetId() != null ? String.format("%03d", Integer.parseInt(dto.getStreetId()))
 										: "000"),
 
+						convertUpperCase(dto.getFatherName()), convertUpperCase(dto.getSpouseName()),
+						convertUpperCase(dto.getAlternateMobileNo()),
+
+						convertUpperCase(dto.getMonthlyIncome()), convertUpperCase(dto.getHouseType()),
+						convertUpperCase(dto.getEducation()), convertUpperCase(dto.getOccupation()),
+
+						convertUpperCase(dto.getAadhar()), convertUpperCase(dto.getVoterId()),
+						convertUpperCase(dto.getRationCard()),
+
+						convertUpperCase(dto.getMedicalhistory()), convertUpperCase(dto.getBloodPressure()),
+						convertUpperCase(dto.getPulseRate()), convertUpperCase(dto.getWeight()),
+						convertUpperCase(dto.getHistoryOfSurgery()), convertUpperCase(dto.getHeight()),
+						convertUpperCase(dto.getSpo2()), convertUpperCase(dto.getAllergy()),
+						convertUpperCase(dto.getOtherComplaints()),
+
+						convertUpperCase(dto.getAgeAtMenarche() != null ? dto.getAgeAtMenarche().toString() : ""),
+						convertUpperCase(dto.getAgeAtFirstChild() != null ? dto.getAgeAtFirstChild().toString() : ""),
+						convertUpperCase(dto.getAgeAtLastChild() != null ? dto.getAgeAtLastChild().toString() : ""),
+						convertUpperCase(dto.getAgeAtMarriage() != null ? dto.getAgeAtMarriage().toString() : ""),
+
+						convertUpperCase(dto.getLastMenstruation()), convertUpperCase(dto.getAbnormalBleedingVaginum()),
+
+						convertUpperCase(dto.getTotalPregnancies() != null ? dto.getTotalPregnancies().toString() : ""),
+						convertUpperCase(dto.getCurrentlyPregnant()),
+
+						convertUpperCase(dto.getMethodOfContraceptionUsed()),
+						convertUpperCase(dto.getUndergoneCervicalBreastScreening()),
+						convertUpperCase(dto.getBreastFed()),
+
+						convertUpperCase(dto.getSocialHabits()),
+
 						convertUpperCase((eligibilityMetrics != null && eligibilityMetrics.getParams() != null
 								&& !eligibilityMetrics.getParams().isEmpty()
 								&& eligibilityMetrics.getParams().get(0).getSelectedValues() != null)
-										? safe(eligibilityMetrics.getParams().get(0).getSelectedValues().get(0))
-										: ""),
-						convertUpperCase(forceText(dto.getCreatedDate())), convertUpperCase(dto.getCreatedBy()) };
+								? safe(eligibilityMetrics.getParams().get(0).getSelectedValues().get(0))
+								: "") };
 				csvWriter.writeNext(row, true);
 			}
 
@@ -262,8 +306,8 @@ public class ReportService {
 						: LocalDateTime.parse(dto.getBreastCreatedDate(), formatter),
 				Comparator.nullsLast(Comparator.reverseOrder())));
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
-				OutputStreamWriter osw = new OutputStreamWriter(baos, StandardCharsets.UTF_8);
-				CSVWriter csvWriter = new CSVWriter(osw)) {
+			 OutputStreamWriter osw = new OutputStreamWriter(baos, StandardCharsets.UTF_8);
+			 CSVWriter csvWriter = new CSVWriter(osw)) {
 
 			String[] header = { "REGISTRATIONID", "CANDIDATENAME", "BREASTCREATEDDATE", "CREATED BY", "MODIFIED BY",
 					"BREASTSCREENING", "BREASTSYMPTOMS", "RIGHTBREASTONPALPATION", "LEFTBREASTONPALPATION",
@@ -541,10 +585,10 @@ public class ReportService {
 				Comparator.nullsLast(Comparator.reverseOrder())));
 
 		try (StringWriter sw = new StringWriter();
-				ICSVWriter csvWriter = new CSVWriterBuilder(sw).withSeparator(CSVWriter.DEFAULT_SEPARATOR)
-						.withQuoteChar(CSVWriter.DEFAULT_QUOTE_CHARACTER)
-						.withEscapeChar(CSVWriter.DEFAULT_ESCAPE_CHARACTER).withLineEnd(CSVWriter.DEFAULT_LINE_END)
-						.build()) {
+			 ICSVWriter csvWriter = new CSVWriterBuilder(sw).withSeparator(CSVWriter.DEFAULT_SEPARATOR)
+					 .withQuoteChar(CSVWriter.DEFAULT_QUOTE_CHARACTER)
+					 .withEscapeChar(CSVWriter.DEFAULT_ESCAPE_CHARACTER).withLineEnd(CSVWriter.DEFAULT_LINE_END)
+					 .build()) {
 
 			// 🔹 Header (manually defined)
 			String[] header = { "OUTREACH CLINIC ID", "OUTREACH CLINIC NAME", "CREATED DATE", "CREATED BY",
